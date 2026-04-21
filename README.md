@@ -1,73 +1,140 @@
-<h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=30&pause=1000&color=00D4FF&center=true&vCenter=true&width=600&lines=Hi+%F0%9F%91%8B%2C+I'm+Nishan+Karki;Frontend+Developer+%7C+Networker;From+Nepal+%F0%9F%87%B3%F0%9F%87%B5" alt="Typing SVG" />
-</h1>
-<h3 align="center">🚀 A passionate Frontend Developer & Networking Enthusiast from Nepal</h3>
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=nishankarki656&label=Profile%20views&color=0e75b6&style=flat" alt="nishankarki656" />
-  <img src="https://img.shields.io/github/followers/nishankarki656?label=Followers&style=social" alt="followers" />
-</p>
+# 🚗 RideWave Nepal — Full-Stack Carpooling Platform
 
-🎓 About Me
-yamlName        : Nishan Karki
-Location    : Nepal 🇳🇵
-College     : Itahari International College
-Focus       : Frontend Development + Networking
-Status      : Currently Learning & Growing 🌱
-Personality : Confident | Leader | Friendly
+> **Stack:** HTML + CSS (Frontend) · Node.js + Express + Socket.io (Backend) · MySQL (Database)
+> **Currency:** NPR — Nepali Rupees
+> **Driver Demo:** Nishan Karki
 
-🎓 Currently studying at Itahari International College
-🌱 Learning Java, Python, Frontend Development & Databases
-💡 Passionate about Networking, Web Development & Design
-🎨 Skilled in Adobe Photoshop & Video Editing
-🤝 Friendly, Confident & a Natural Leader
-🌐 Working on HTML, CSS, JavaScript & more
+---
 
+## 📁 Project Structure
 
-🛠️ Languages & Technologies
-💻 Programming & Web
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=html,css,js,java,python" />
-</p>
-🗄️ Databases
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=mysql,oracle" />
-  <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" />
-</p>
-🌐 Networking & Tools
-<p align="left">
-  <img src="https://img.shields.io/badge/Cisco_Packet_Tracer-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white" />
-  <img src="https://img.shields.io/badge/Networking-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" />
-</p>
-🎨 Creative Tools
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=ps" />
-  <img src="https://img.shields.io/badge/Video_Editing-FF0000?style=for-the-badge&logo=adobe-premiere-pro&logoColor=white" />
-</p>
-⚙️ Other Tools
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=git,github,vscode,nodejs" />
-</p>
+```
+ridewave/
+├── frontend/
+│   ├── index.html          ← Main page (all sections)
+│   ├── css/
+│   │   └── style.css       ← All styles
+│   └── js/
+│       └── app.js          ← All frontend logic + API calls (NPR)
+│
+├── backend/
+│   ├── server.js           ← Express + Socket.io entry point
+│   ├── package.json
+│   ├── .env.example        ← Copy to .env and fill in values
+│   ├── config/
+│   │   └── db.js           ← MySQL connection pool
+│   ├── middleware/
+│   │   └── auth.js         ← JWT authenticate + authorize
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── bookingController.js   ← Fares in NPR
+│   │   ├── paymentController.js   ← Currency: NPR
+│   │   ├── ratingController.js
+│   │   ├── chatController.js
+│   │   └── gpsController.js
+│   └── routes/
+│       └── index.js
+│
+└── database/
+    └── schema.sql          ← Full MySQL schema
+```
 
+---
 
+## ⚙️ Quick Setup
 
-🤝 Connect with Me
-<p align="left">
-  <a href="https://www.facebook.com/" target="blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="facebook" height="40" width="40" />
-  </a>
-  <a href="https://www.instagram.com/" target="blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="instagram" height="40" width="40" />
-  </a>
-  <a href="https://linkedin.com/" target="blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="linkedin" height="40" width="40" />
-  </a>
-</p>
+### 1. MySQL
+```bash
+mysql -u root -p < database/schema.sql
+```
 
-💬 Quote I Live By
+### 2. Backend
+```bash
+cd backend
+cp .env.example .env
+# Edit .env — set DB_PASSWORD, JWT_SECRET, JWT_REFRESH_SECRET
+npm install
+npm run dev        # Runs on http://localhost:5000
+```
 
-"Leadership is not about being in charge. It is about taking care of those in your charge."
+### 3. Frontend
+```bash
+# VS Code Live Server  OR
+npx serve frontend -p 3000
+```
 
+---
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer&text=Thanks%20for%20visiting!&fontSize=20&fontColor=fff&animation=twinkling" />
-</p>
+## 💰 Fare Structure (NPR)
+
+| Ride Type | Base Fare (NPR) |
+|-----------|----------------|
+| Economy   | NPR 600        |
+| Comfort   | NPR 950        |
+| XL        | NPR 2,000      |
+| Luxury    | NPR 3,500      |
+
+---
+
+## 💳 Payment Methods
+
+| Key           | Label             |
+|---------------|-------------------|
+| credit_card   | Credit Card       |
+| debit_card    | Debit Card        |
+| net_banking   | Net Banking (Nepal banks) |
+| visa          | Visa Card         |
+| esewa         | eSewa             |
+| paypal        | PayPal            |
+
+---
+
+## 🔗 API Endpoints
+
+| Method | Endpoint                        | Auth   | Description              |
+|--------|---------------------------------|--------|--------------------------|
+| POST   | `/api/auth/register`            | —      | Register rider/driver    |
+| POST   | `/api/auth/login`               | —      | Login → JWT tokens       |
+| POST   | `/api/auth/refresh`             | —      | Refresh access token     |
+| POST   | `/api/auth/logout`              | —      | Invalidate token         |
+| POST   | `/api/bookings`                 | ✅ JWT | Create booking (NPR)     |
+| GET    | `/api/bookings`                 | ✅ JWT | My bookings              |
+| GET    | `/api/bookings/:id`             | ✅ JWT | Booking detail           |
+| PATCH  | `/api/bookings/:id/cancel`      | ✅ JWT | Cancel booking           |
+| POST   | `/api/payments`                 | ✅ JWT | Pay in NPR               |
+| GET    | `/api/payments/:bookingId`      | ✅ JWT | Payment status           |
+| POST   | `/api/ratings`                  | ✅ JWT | Submit rating            |
+| GET    | `/api/ratings/driver/:id`       | —      | Driver reviews           |
+| GET    | `/api/chat/:bookingId`          | ✅ JWT | Chat history             |
+| POST   | `/api/chat/:bookingId`          | ✅ JWT | Send message             |
+| POST   | `/api/gps/update`               | Driver | Push location            |
+| GET    | `/api/gps/:bookingId`           | ✅ JWT | Driver live location     |
+| GET    | `/api/health`                   | —      | Health check             |
+
+---
+
+## 🔌 Socket.io Events
+
+| Event             | Description                    |
+|-------------------|--------------------------------|
+| `join_booking`    | Join a booking room            |
+| `chat_message`    | Send/receive chat message      |
+| `typing`          | Show typing indicator          |
+| `stop_typing`     | Hide typing indicator          |
+| `driver_location` | Broadcast GPS coordinates      |
+
+---
+
+## 🗃️ Database Tables
+
+| Table                | Purpose                       |
+|----------------------|-------------------------------|
+| users                | Riders, drivers, admins       |
+| driver_profiles      | Vehicle & GPS data            |
+| bookings             | Ride bookings (NPR fares)     |
+| booking_passengers   | Passenger names for groups    |
+| payments             | NPR payment records           |
+| ratings              | Star ratings & reviews        |
+| messages             | Chat per booking              |
+| gps_tracking         | GPS log                       |
+| refresh_tokens       | JWT refresh token store       |
